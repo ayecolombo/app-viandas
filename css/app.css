@@ -29,3 +29,22 @@ body {
     min-height: 1000px;
     padding: 2rem;
 }
+
+#banner {
+    background: url('../img/comidas.jpg') no-repeat center center;
+    background-size: cover;
+    height: 40vh;
+}
+
+.custom-height {
+    height: 400px; /* Ajusta la altura deseada en píxeles */
+    /* Puedes ajustar otros estilos según tus necesidades, como el ancho, la alineación, etc. */
+}
+
+.estilo-mensaje {
+    height: 200px;
+}
+
+.text-success-dark {
+    color: #155e15; /* Este es un tono más oscuro de verde*/
+}

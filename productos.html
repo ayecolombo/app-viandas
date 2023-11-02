@@ -30,10 +30,10 @@
                         <a class="nav-link fs-4 " aria-current="page" href="info.html">Quienes Somos |</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fs-4 " aria-current="page" href="productos.html">Nuestros Productos |</a>
+                        <a class="nav-link fs-4 active" aria-current="page" href="productos.html">Nuestros Productos |</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fs-4 active" href="formulario.html">Contacto |</a>
+                        <a class="nav-link fs-4" href="formulario.html">Contacto |</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link fs-4 " href="calculos.html">Simulador de Recetas</a>
@@ -42,89 +42,60 @@
             </div>
         </div>     
     </nav>
-    
-    <h4 class="py-4 text-center text-success-dark">
-        <p>Completá el siguiente formulario o escribinos a info@appviandas.com.ar y consultanos por tus Viandas Personalizadas.</p>
-        <p>También podes comunicarte vía telefónica al 0341 - 9999999 / 155000009</p>
-    </h4>
-    
-        
-   
-    <form class="py-3 needs-validation" novalidate action="https://formspree.io/f/xeqbdaob" method="post">
-        
+
+    <main>
+        <h1 class="text-center my-5 heading text-success-dark">Acerca de Nuestros Productos</h1>
+
         <div class="container-xl">
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-3 " ></div>
+                <div class="col-md-6 " >
+                   <p>
+                    Nuestros productos son elaborados con la primerísima calidad en mente en cada paso del proceso. Desde la selección de ingredientes frescos y cuidadosamente elegidos hasta la atención meticulosa en la preparación y presentación, nos enorgullece ofrecer productos que cumplen con los más altos estándares.
 
-                    <legend> <i class="bi bi-person-plus-fill"></i> </legend>
+                   </p> 
 
-                        <div class="mb-3">
-                            <label for="nombre" class="form-label">Nombre</label> <!-- [A-Za-zÁáÉéÍíÓóÚúÑñ\s]+ -->
-                            <input id="nombre" name="nombre" type="text" class="form-control" required pattern="^[A-Za-zÁáÉéÍíÓóÚúÑñ][A-Za-zÁáÉéÍíÓóÚúÑñ\s]*$" title="Solo se admiten letras y espacios">
-                            <div class="invalid-feedback">
-                                Ingrese un nombre válido (solo letras y espacios).
+                   <p>
+                    Nuestro compromiso con la calidad se refleja en cada bocado que ofreces a tus seres queridos. Cada producto que sale de nuestra cocina es una muestra de nuestra pasión por la excelencia, y nos esforzamos constantemente por superar las expectativas.
+                   </p>
+                   
+                </div>
+            </dWiv>
+            <div class="row">
+                <div class="col-md-3 " > </div>
+                <div class="col-md-6 " >
+                    <div id="carouselExampleInterval" class="carousel slide " data-bs-ride="carousel" >
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="2000">
+                                <img src="img/productos6.jpg" class="d-block "  alt="...">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="2000">
+                                <img src="img/productos4.jpg"   alt="...">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="2000">
+                                <img src="img/productos7.jpg" class="d-block "  alt="...">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="2000">
+                                <img src="img/productos8.jpg" class="d-block "  alt="...">
                             </div>
                         </div>
-
-                        <div class="mb-3">
-                            <label for="empresa" class="form-label" required >Empresa</label>
-                            <input id="empresa" name="empresa" type="text" class="form-control" required >
-                            <div class="invalid-feedback">
-                                Ingresar nombre de la Empresa.
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input id="email" name="email" type="email" class="form-control" email required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="mensaje" class="form-label" require>Mensaje</label>
-                            <textarea id="mensaje" name="mensaje" type="text" placeholder="Ingrese su mensaje..." class="form-control estilo-mensaje" required></textarea>
-                        
-                        </div>
-                        
-                        
-                        <button type="reset" class="btn btn-success">
-                            <i class="bi bi-plus-circle-fill"> Borrar </i></button>
-
-                        <button type="submit" class="btn btn-success" onclick="enviar()" style="float: right;">
-                            <i class="bi bi-plus-circle-fill">Enviar</i></button>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </form>
 
-    <script>
-        (() => {
-            'use strict'
 
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            const forms = document.querySelectorAll('.needs-validation')
-
-            // Loop over them and prevent submission
-            Array.from(forms).forEach(form => {
-                form.addEventListener('submit', event => {
-                if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                }
-
-                form.classList.add('was-validated')
-                }, false)
-            })
-            })()
-
-        function enviar(){
-
-            // alert ("Formulario enviado")
-        }
-
-    </script>
-                                    
+    </main>
+                                        
 
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/formulario.js"></script>
 </body>
 </html>
