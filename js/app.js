@@ -212,7 +212,7 @@ function mostrarRecetas(recetas = [],categoria) {
             modalTitle.textContent = recetaSeleccionada.nombre;
             
             modalBody.innerHTML = `
-                <img class="img-fluid" src=${recetaSeleccionada.img} alt="receta TODO" />
+                <img class="img-fluid" src=${recetaSeleccionada.img} alt="" />
                 <h3 class="my-3">Instrucciones</h3>
                 <p> ${recetaSeleccionada.instrucciones ? recetaSeleccionada.instrucciones : "Proximamente ..."}
                 <h3 class="my-3">Ingredientes y Cantidades</h3>

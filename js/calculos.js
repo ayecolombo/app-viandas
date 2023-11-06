@@ -22,8 +22,9 @@ function obtenerDatos(){
             nombre : "Fetucchini con salsa mixta",
             img: "img/pasta1.jpg",
             ingredientes: [
-               {nombre: "pure de tomate 250ml", cantidad: 1},
-               {nombre: "crema de leche 500ml", cantidad: 2}
+               {nombre: "pure de tomate ", cantidad: 250, unidad: "ml"},
+               {nombre: "crema de leche", cantidad: 360, unidad: "ml"},
+               {nombre: "papas", cantidad: 2, unidad: "k"}
             ] 
         },
         {
@@ -32,8 +33,8 @@ function obtenerDatos(){
             nombre : "Mostachol a la parmesano",
             img: "img/pasta2.jpg",
             ingredientes: [
-                {nombre: "queso", cantidad: 5},
-                {nombre: "oregano", cantidad: 2}
+                {nombre: "queso", cantidad: 110, unidad:"gr"},
+                {nombre: "oregano", cantidad: 100, unidad:"gr"}
              ]
         },
         // {
@@ -118,7 +119,14 @@ function calcular(event) {
             var tdProducto = document.createElement("td");
             tdProducto.textContent = ingrediente.nombre;
             var tdCantidad = document.createElement("td");
-            tdCantidad.textContent = (ingrediente.cantidad * inputCantidad.value) + ' unidades';
+            var res = ingrediente.cantidad * inputCantidad.value;
+            var unidadMil;
+            if(ingrediente.unidad == 'ml'){
+                unidadMil = ' lt';
+            }else if (ingrediente.unidad == 'gr'){
+                unidadMil = ' kg';
+            }
+            tdCantidad.textContent = res >= 1000 ? res/1000 + unidadMil : res + ' ' +ingrediente.unidad;
             
             tr.appendChild(tdProducto);
             tr.appendChild(tdCantidad);
@@ -134,6 +142,16 @@ function limpiarHtml(selector) { // Esto crea un bucle while que se ejecutará s
     while(selector.firstChild){ // selector es el elemento HTML del que se eliminarán los elementos hijos. selector.firstChild se refiere al primer hijo del elemento selector.
         selector.removeChild(selector.firstChild);
     }
+}
+
+function conversorPesaje(peso, cantidad ) {
+  cantidad = cantidad >= 1000 ? cantidad / 1000 : cantidad;
+  const unidad = cantidad >= 1000 ? 'kg' : 'gr';
+  
+  // Formatea el resultado como un String
+  const resultado = cantidad.toString() + ' ' + unidad; // 2.5k
+  
+  return resultado;
 }
 
 // table.appendChild = `
